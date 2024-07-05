@@ -1,0 +1,17 @@
+# SSH connection configuration
+[[servers]]
+name = "proxy"
+ssh.ip = "95.140.147.60"
+ssh.port = 21
+ssh.pass = "1234"
+ssh.strict_host_key_checking = "no"
+ssh.server_gateway_ports = "yes"
+
+# Tunnels configuration
+[[tunnels]]
+name = "tun80"
+server = "proxy"
+remote.ip = "95.140.147.60"
+remote.port = "80"
+machine.ip = "localhost"
+machine.port = "80"
